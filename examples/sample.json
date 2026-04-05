@@ -1,0 +1,43 @@
+{
+  "reasoning_steps": [
+    "The user asks for the capital of France.",
+    "I recall that France is a country in Western Europe.",
+    "The capital city of France is Paris."
+  ],
+  "expected_reasoning_steps": [
+    "recall country location",
+    "identify capital city"
+  ],
+  "conclusion": "Paris",
+  "expected_conclusion": "Paris",
+  "tool_calls": [
+    {
+      "tool": "knowledge_base",
+      "parameters": {"query": "capital of France"},
+      "status": "success",
+      "result": "Paris"
+    }
+  ],
+  "expected_tool_calls": [
+    {
+      "tool": "knowledge_base",
+      "parameters": {"query": "capital of France"}
+    }
+  ],
+  "steps": [
+    {"id": "retrieve", "status": "completed", "retries": 0, "state": {"answer": "Paris"}},
+    {"id": "verify",   "status": "completed", "retries": 0, "state": {"verified": true}}
+  ],
+  "total_steps": 2,
+  "expected_states": {
+    "retrieve": {"answer": "Paris"},
+    "verify":   {"verified": true}
+  },
+  "status": "success",
+  "completion_score": 1.0,
+  "goals": [
+    {"id": "answer_question", "achieved": true}
+  ],
+  "steps_taken": 2,
+  "step_budget": 5
+}
