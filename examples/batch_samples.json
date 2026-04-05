@@ -1,0 +1,45 @@
+[
+  {
+    "reasoning_steps": [
+      "The user asks for the capital of France.",
+      "The capital city of France is Paris."
+    ],
+    "expected_reasoning_steps": ["recall country location", "identify capital city"],
+    "conclusion": "Paris",
+    "expected_conclusion": "Paris",
+    "tool_calls": [
+      {"tool": "knowledge_base", "parameters": {"query": "capital of France"}, "status": "success"}
+    ],
+    "expected_tool_calls": [
+      {"tool": "knowledge_base", "parameters": {"query": "capital of France"}}
+    ],
+    "steps": [
+      {"id": "retrieve", "status": "completed", "retries": 0}
+    ],
+    "total_steps": 1,
+    "status": "success",
+    "goals": [{"id": "answer_question", "achieved": true}],
+    "steps_taken": 1,
+    "step_budget": 3
+  },
+  {
+    "reasoning_steps": [],
+    "expected_reasoning_steps": ["identify problem", "formulate plan", "execute"],
+    "conclusion": "unknown",
+    "expected_conclusion": "Berlin",
+    "tool_calls": [
+      {"tool": "wrong_tool", "status": "error"}
+    ],
+    "expected_tool_calls": [
+      {"tool": "knowledge_base"}
+    ],
+    "steps": [
+      {"id": "step1", "status": "failed", "recovered": false, "retries": 3}
+    ],
+    "total_steps": 4,
+    "status": "failure",
+    "goals": [{"id": "answer_question", "achieved": false}],
+    "steps_taken": 10,
+    "step_budget": 3
+  }
+]
