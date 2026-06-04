@@ -1,1 +1,2 @@
 
+Build a FastAPI service that communicates with an agent via JSON-RPC, supporting streaming responses. Use HTTPX to send JSON-RPC requests to the agent endpoint. Implement Server-Sent Events (SSE) or WebSockets to stream partial results back to the frontend. Ensure the endpoint receives a JSON-RPC method and parameters, initiates the call, and streams each chunk of the response as soon as it arrives. Return the full streamed data to the client incrementally, and handle any errors gracefully during the stream.
